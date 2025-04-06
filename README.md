@@ -46,3 +46,21 @@ Make regular commits and pushes, so that we can see the evolution of the solutio
 ## Deadline
 
 You have 72 hours to complete the task. We reckon a couple of evenings should be enough.
+
+## Solution Remarks
+
+For simplicity, I used `make` to test, since the test script was straightforward.
+
+Out of curiosity, I tried Bun to see how it compiles TypeScript.
+
+Limitations:
+- Inferring CSV schemas is flaky — it's often unclear if a value is a number or a string (not in our specific example but when you try to generalize).
+- Inferring PRN schemas seems basically impossible. Even SheetJS and Pandas struggle. Excel's importer also required significant tweaking (column boundaries, format, etc.).
+
+Given this, I decided we need to explicitly define the import schema to ensure correct and reproducible script behavior.
+
+Next steps:
+
+Properly handle piped input to read and write the stream. This is important when the files get bigger.
+
+Remark: I spent quite some time on encoding issues — turns out it worked fine by reading the stream as binary and letting TypeScript guess the encoding.

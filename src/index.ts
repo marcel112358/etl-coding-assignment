@@ -205,6 +205,8 @@ async function main() {
     // Export the data to the specified format
     const output = exporter.doExport(content);
 
+    // TODO: Handle the output more elegantly and stream it to stdout
+    // For now, we just print it to the console
     // Print the output to the console
     console.log(output);
 }
