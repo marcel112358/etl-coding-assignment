@@ -60,7 +60,8 @@ Limitations:
 Given this, I decided we need to explicitly define the import schema to ensure correct and reproducible script behavior.
 
 Next steps:
-
-Properly handle piped input to read and write the stream. This is important when the files get bigger.
+- Modularize / move the classes in separate files
+- Set up some unit tests
+- Properly handle piped input to read and write the stream. This is important when the files get bigger.
 
 Remark: I spent quite some time on encoding issues — turns out it worked fine by reading the stream as binary and letting TypeScript guess the encoding.
