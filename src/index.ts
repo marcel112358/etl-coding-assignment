@@ -1,6 +1,5 @@
 import process from 'process';
 import moment from 'moment';
-import languageEncoding from "detect-file-encoding-and-language";
 
 type allowedFieldTypes = Date | number | boolean | string | null;
 interface Record {
